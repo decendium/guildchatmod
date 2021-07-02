@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ColorMod",
+  "name": "Color mod",
+  "description": "Amogus mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["mjnt mjnt mjnt"],
+  "credits": "mjnt",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
