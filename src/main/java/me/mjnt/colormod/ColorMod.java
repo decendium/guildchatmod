@@ -1,14 +1,14 @@
 package me.mjnt.colormod;
 
+import me.mjnt.colormod.commands.ColorCommand;
 import org.apache.logging.log4j.Logger;
 
+import me.mjnt.colormod.commands.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.client.ClientCommandHandler;
-
-import java.awt.*;
 
 @Mod(modid = ColorMod.MODID, name = ColorMod.NAME, version = ColorMod.VERSION)
 public class ColorMod {
@@ -23,6 +23,7 @@ public class ColorMod {
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        ClientCommandHandler.instance.registerCommand(new SetColorCommand());
         ClientCommandHandler.instance.registerCommand(new ColorCommand());
     }
 
