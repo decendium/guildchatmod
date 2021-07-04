@@ -42,7 +42,7 @@ public class ColorCommand extends CommandBase {
         String color = SetColorCommand.getString("commands", "color");
         try {
             if (params != null && params.length > 0) {
-                Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + color + String.join(" ", params));
+                Minecraft.getMinecraft().thePlayer.sendChatMessage("/gc " + color + String.join(" ", params));
             }
         } catch (Exception e) {
             e.printStackTrace();
