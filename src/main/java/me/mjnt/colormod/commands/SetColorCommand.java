@@ -13,6 +13,12 @@ import me.mjnt.colormod.ConfigHandler;
 import java.io.File;
 import java.util.Arrays;
 
+/*
+so much extra stuff!
+im keeping it all because it worked
+the first half of this once again - credits to dankers skyblock mod bc i have no idea how to make configs!
+*/
+
 public class SetColorCommand extends CommandBase {
 
     public static Configuration config;
