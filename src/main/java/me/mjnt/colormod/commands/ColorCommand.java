@@ -3,6 +3,7 @@ package me.mjnt.colormod.commands;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import jdk.nashorn.internal.parser.JSONParser;
+import me.mjnt.colormod.ConfigHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.CommandBase;
@@ -40,9 +41,14 @@ public class ColorCommand extends CommandBase {
     public void processCommand(ICommandSender sender, String[] params) throws CommandException {
         // BufferedReader br = new BufferedReader(new FileReader("settings.json"));
         String color = SetColorCommand.getString("commands", "color");
+        Boolean toggle = ConfigHandler.getBoolean("toggles", "prefix");
         try {
             if (params != null && params.length > 0) {
-                Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + color + String.join(" ", params));
+                if (toggle == true) {
+                    Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + color + String.join(" ", params));
+                } else {
+                    Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + String.join(" ", params));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

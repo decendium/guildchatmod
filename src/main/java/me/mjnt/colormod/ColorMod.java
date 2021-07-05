@@ -15,7 +15,7 @@ public class ColorMod {
 
     public static final String MODID = "ColorMod";
     public static final String NAME = "Color Mod";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.2";
 
     public static Logger logger;
 
@@ -25,6 +25,7 @@ public class ColorMod {
         logger = event.getModLog();
         ClientCommandHandler.instance.registerCommand(new SetColorCommand());
         ClientCommandHandler.instance.registerCommand(new ColorCommand());
+        ClientCommandHandler.instance.registerCommand(new ToggleColorCommand());
     }
 
     @EventHandler
