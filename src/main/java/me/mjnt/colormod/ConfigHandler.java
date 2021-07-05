@@ -1,13 +1,13 @@
 package me.mjnt.colormod;
 
-import me.mjnt.colormod.commands.ToggleColorCommand;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
 
 /*
-credits to danker skyblock mod xd i bad at making configs
- */
+credits to dankers skyblock mod for 100% of this class lmao
+i have no idea how to make a config and this worked so
+*/
 
 public class ConfigHandler {
 
@@ -40,21 +40,6 @@ public class ConfigHandler {
         return "";
     }
 
-    public static boolean getBoolean(String category, String key) {
-        config = new Configuration(new File(file));
-        try {
-            config.load();
-            if (config.getCategory(category).containsKey(key)) {
-                return config.get(category, key, false).getBoolean();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            config.save();
-        }
-        return true;
-    }
-
     public static boolean hasKey(String category, String key) {
         config = new Configuration(new File(file));
         try {
@@ -82,19 +67,6 @@ public class ConfigHandler {
         }
     }
 
-    public static void writeBooleanConfig(String category, String key, boolean value) {
-        config = new Configuration(new File(file));
-        try {
-            config.load();
-            boolean set = config.get(category, key, value).getBoolean();
-            config.getCategory(category).get(key).set(value);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            config.save();
-        }
-    }
-
     public static String initString(String category, String key, String defaultValue) {
         if (!hasKey(category, key)) {
             writeStringConfig(category, key, defaultValue);
@@ -104,16 +76,4 @@ public class ConfigHandler {
         }
     }
 
-    public static boolean initBoolean(String category, String key, boolean defaultValue) {
-        if (!hasKey(category, key)) {
-            writeBooleanConfig(category, key, defaultValue);
-            return defaultValue;
-        } else {
-            return getBoolean(category, key);
-        }
-    }
-
-    public static void reloadConfig() {
-        ToggleColorCommand.chatToggled = initBoolean("toggles", "prefix", true);
-    }
 }
