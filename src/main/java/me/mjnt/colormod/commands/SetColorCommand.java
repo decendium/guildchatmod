@@ -105,7 +105,7 @@ public class SetColorCommand extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] params) throws CommandException {
-        String userColor = Arrays.toString(params).replace(",", "").replace("[", "").replace("]", "").trim();
+        String userColor = params[0].trim();
         try {
             ConfigHandler.writeStringConfig("commands", "color", userColor);
             Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA+"Your color code has been set to " + userColor + "!"));
