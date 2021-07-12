@@ -34,20 +34,16 @@ public class ColorCommand extends CommandBase {
         return true;
     }
 
-
-    //public String color = "&a";
-
     @Override
     public void processCommand(ICommandSender sender, String[] params) throws CommandException {
-        // BufferedReader br = new BufferedReader(new FileReader("settings.json"));
-        String color = SetColorCommand.getString("commands", "color");
+        String color = ConfigHandler.getString("commands", "color");
         Boolean toggle = ConfigHandler.getBoolean("toggles", "prefix");
         try {
             if (params != null && params.length > 0) {
                 if (toggle == true) {
-                    Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + color + String.join(" ", params));
+                    Minecraft.getMinecraft().thePlayer.sendChatMessage("/gc " + color + String.join(" ", params));
                 } else {
-                    Minecraft.getMinecraft().thePlayer.sendChatMessage("gc " + String.join(" ", params));
+                    Minecraft.getMinecraft().thePlayer.sendChatMessage("/gc " + String.join(" ", params));
                 }
             }
         } catch (Exception e) {

@@ -102,7 +102,7 @@ public class ToggleColorCommand extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        Boolean toggled = ToggleColorCommand.getBoolean("toggles", "prefix");
+        Boolean toggled = ConfigHandler.getBoolean("toggles", "prefix");
         if (toggled == true) {
             ConfigHandler.writeBooleanConfig("toggles", "prefix", false);
             Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA+ "Your color code prefix is now " +EnumChatFormatting.BOLD + EnumChatFormatting.AQUA + "OFF."));
@@ -112,10 +112,5 @@ public class ToggleColorCommand extends CommandBase {
             Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA+ "Your color code prefix is now " +EnumChatFormatting.BOLD + EnumChatFormatting.AQUA + "ON."));
             System.out.println("on");
         }
-
-        // TODO: write this code! xd
-        // TODO: just need to make a boolean false/true depending on what state its in
-        // TODO: if/else statements save the day!
-
     }
 }
