@@ -1,7 +1,7 @@
 [
 {
   "modid": "ColorMod",
-  "name": "guild chat mod",
+  "name": "Color mod",
   "description": "mod that puts a color code before everything you say using /gc",
   "version": "${version}",
   "mcversion": "${mcversion}",

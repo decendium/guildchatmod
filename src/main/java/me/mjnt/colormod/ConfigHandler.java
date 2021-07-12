@@ -5,8 +5,7 @@ import net.minecraftforge.common.config.Configuration;
 import java.io.File;
 
 /*
-credits to dankers skyblock mod for 100% of this class lmao
-i have no idea how to make a config and this worked so
+credits to dankers skyblock mod!
 */
 
 public class ConfigHandler {
